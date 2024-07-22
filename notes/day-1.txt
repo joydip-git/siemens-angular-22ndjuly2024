@@ -57,7 +57,13 @@ b. New Features in JS (ES6+)
 	1. let and const keywords
 	2. arrow function
 	3. rest operator
-	4. 
+	4. templated string (string interpolaion)
+	5. class and constructor keywords
+	6. getters and setters in class
+	7. private data members
+	8. static members
+	9. extends and super (inheritance and override)
+	10. object and array destructuring
 
 data types:
 string, boolean, number, object and function
@@ -91,6 +97,9 @@ since 2015, ES6 and further versions are known as ES6+ (new) versions
 2022 - ES13
 2023 - ES14
 2024 - ES15 (TC239)
+
+Objecs in JS:
+
 
 
 
