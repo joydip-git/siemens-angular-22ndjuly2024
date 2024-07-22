@@ -99,6 +99,66 @@ since 2015, ES6 and further versions are known as ES6+ (new) versions
 2024 - ES15 (TC239)
 
 Objecs in JS:
+a. object literal syntax
+b. constructor function
+c. class and constructor keyword
+
+JS disadvantages:
+a. no data typification
+b. no static type checking
+
+transpilation: transformation + compilation
+JS code with all latest features (ES15) => vanilla JS (< ES6)
+tool: JS transpiler (babel etc.)
+
+TS code with all latest features (ES15) => vanilla JS (< ES6)
+tool: TS transpiler => typescript compiler (TSC)
+
+global installation: >npm install/i typescript --location=global
+path: C:\Users\<user-name>\AppData\Roaming\npm
+
+local installation (as part if your application): 
+>npm i typescript -D or npm i typescript --save-dev
+
+create tsconfig.json file
+a. manual
+b. using tsc
+command: >tsc --init (global tsc)
+command: >.\node_modules\.bin\tsc --init (local tsc)
+
+package managers: npm, yarn, bower etc.
+
+application metadata/setting file: package.json
+a. manually
+b. using npm
+	>npm init
+	or
+	>npm init --yes
+
+install any package:
+complete dependency:
+>npm install/i <package-name>@<version-number>/latest 
+or 
+>npm install/i <package-name>@<version-number>/latest --save
+
+
+development dependency:
+>npm install/i <package-name>@<version-number>/latest -D
+or
+>npm install/i <package-name>@<version-number>/latest --save-dev
+
+all the package's source code will be part of "node_modules" folder and their corresponding executables will be present inside ".bin" sub-folder inside node_modules folder
+
+TypeScript: 
+a development level language
+before you can execute this code, you need to convert the TS code to JS code.
+conversion from TS to JS: transpilation
+a. data typification
+b. static type checking
+c. extra features - generic, interface, extra data types (any, partial, unknown etc.) etc.
+
+strict mode JS:
+generates all possible warnings about possible guideline/rule violation or mistakes
 
 
 
