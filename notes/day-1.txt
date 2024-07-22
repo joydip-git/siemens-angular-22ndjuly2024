@@ -1,0 +1,70 @@
+repository: https://github.com/joydip-git/siemens-angular-22ndjuly2024
+
+s/w requirements:
+Node JS latest LTS version (20.15.1)
+Visual Studio Code (System Installer - X64 version)
+
+Pre-requisites:
+HTML and CSS
+JavaScript and TypeScript
+JS runtime: Node JS and Browser
+
+JavaScript:
+loosely typed programming language
+it is object-based programming language
+compiled and executed by a JS engine
+
+runtime environments:
+a. Browser
+b. Node JS, Rhino, Dino etc.
+
+a. Browser: JS code written inside HTML file or separately in a JS file, but linked with HTML file using <script> tag, will be compiled and executed by JS engine, part of the browser.
+chrome: V8
+edge: V8 (chromekit browser)
+opera: V8
+safari: JS core
+mozilla firefox: Spidermonkey
+
+b. non-browser (Node JS, Rhino, Dino etc.):
+directly a JS file containing JS code will be supplied to those runtimes and it is compiled and executed by the JS engine part of those runtimes
+Node JS: has a JS engine, which is slightly modified version of V8 engine
+
+Application development server: during the development of the application, the server which is used to load the static files and resources in the browser of that application, looks for file changes and reloads them over time and again. 
+they are not real time production server.  
+they will host the application resources using a different port number, apart from 80 and HTTP protocol in your system. 
+the application hosted by this app dev server, can't be requested from any other machine.
+such as: lite-server, http-server, serve etc.
+as VS code plugin: Live Server
+
+
+Node JS: a JS runtime s/w, created by Mr. Ryan Dahl, in 2009. It is a server-side framework.
+Node JS is built at the top of V8 JS engine (of the chrome browser. V8 is an open source code mainly written in C++).
+Node JS has a rich library with many built-in functions, such as functions to read data from and write data into file, create RESTful Web Server application and many others...
+Lots of compiler tools, app dev servers are also built using Node JS.
+
+
+JavaScript language:
+
+A. Basics:
+a. data types
+b. operators
+c. control flow statements
+d. array
+
+B. Advanced:
+a. New Features in JS (ES6+)
+
+data types:
+string, boolean, number, object and function
+
+keywords: undefined, infinity, null, NaN etc.
+
+declare variables: always using "var" keyword
+
+object in JS: a collection of keys and values
+
+
+
+
+
+
