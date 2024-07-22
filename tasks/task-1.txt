@@ -1,0 +1,30 @@
+calculating total salary of employees
+
+name: payroll-app
+
+developer:
+	value attributes: name, id, basic, da, hra, incentive
+	functional attribute: 
+		name: calculateSalary
+		args: No
+		return: number 
+		task: calculate total salary of a developer (just by adding basic, da, hra, incentive)
+
+hr:
+	value attributes: name, id, basic, da, hra, gratuity
+	functional attribute: 
+		name: calculateSalary
+		args: No
+		return: number 
+		task: calculate total salary of an Hr (just by adding basic, da, hra, gratuity)
+
+a. create an array to store some sample objects of developer and hr both (2 each)
+note: create objects with hard-coded values
+
+b. iterate through the array, calculate everyone's salary and print their salary along with name
+
+c. filter the array where salary of employees is more than a criteria value (e.g., 10000)
+
+d. sort the employees by their name or salary or id based on a choice
+
+if any extra attribute should be neccesary, add them in your classes
