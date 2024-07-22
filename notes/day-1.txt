@@ -49,19 +49,48 @@ A. Basics:
 a. data types
 b. operators
 c. control flow statements
-d. array
+d. array and basic methods of an array
 
 B. Advanced:
-a. New Features in JS (ES6+)
+a. callback mechanism and array's advanced methods
+b. New Features in JS (ES6+)
+	1. let and const keywords
+	2. arrow function
+	3. rest operator
+	4. 
 
 data types:
 string, boolean, number, object and function
 
 keywords: undefined, infinity, null, NaN etc.
 
-declare variables: always using "var" keyword
+declare variables: always using "var" or "let" or "const" keywords
+var will not provide scoping of variable inside a function
+let will provide scoping of variable inside a function
 
 object in JS: a collection of keys and values
+
+=== => strict equality (checks both the data type and value of both the operands are same or not)
+!== => strict in-equality (checks both the data type and value of both the operands are not same or not)
+== => equality (checks value of both the operands are same or not)
+!= => inequality (checks value of both the operands are not same or not)
+
+JS versions:
+JS features are proposed by ECMA (an organization for open standards technologies)
+the guideline or proposal for Scripting languages is known as ECMAScript or ES
+before 2015, ES5 was the last "old" version
+since 2015, ES6 and further versions are known as ES6+ (new) versions
+
+2015 - ES6 => let and const keywords, arrow function, object destructuring, spread and rest operator, promise API, class and constructor and extends and super keywords etc.
+2016 - ES7
+2017 - ES8
+2018 - ES9
+2019 - ES10
+2020 - ES11
+2021 - ES12
+2022 - ES13
+2023 - ES14
+2024 - ES15 (TC239)
 
 
 
