@@ -5,6 +5,8 @@ TypeScript:
 		- extra data types: any, partial, unknown etc.
 		- type
 
+Modules: API to export members of a file (JS/TS/...) 
+
 Modules Formats in JS/TS:
 --------------------------
 a. Common JS module format (default for Node JS)
@@ -52,3 +54,8 @@ import subtract,{add} from './utility'
 
 Module Loaders:
 -------------------------------
+Common JS => Common JS Module loader
+AMD => Require JS (does not understand Common JS, ES6, UMD etc. other module formats)
+
+
+
