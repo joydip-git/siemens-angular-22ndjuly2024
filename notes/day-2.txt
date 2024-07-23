@@ -1,0 +1,54 @@
+TypeScript:
+	features
+		- generic
+		- interface
+		- extra data types: any, partial, unknown etc.
+		- type
+
+Modules Formats in JS/TS:
+--------------------------
+a. Common JS module format (default for Node JS)
+exporting: module.exports = {prop1:member1, prop2:member2,...}
+importing: const {prop1, prop2} = require('relative-path-of-module')
+
+b. AMD (asynchronous Module Definition) format
+
+index.js
+define(['./utility'], function(){
+	add()
+})
+
+utility.js
+define([],function(){
+	const add = (a,b)=>a+b
+	exports = {add}
+})
+
+c. UMD (Universal Module Definition) format
+
+index.js
+require(['./utility'], function(){
+	add()
+})
+
+utility.js
+require([],function(){
+	const add = (a,b)=>a+b
+	exports = {add}
+})
+
+d. ES6 module format
+exporting:
+
+export const add = (a,b)=>a+b
+
+const subtract =(a,b)=>a-b
+export default subtract
+
+importing:
+//import {add} from './utility'
+import subtract,{add} from './utility'
+
+
+Module Loaders:
+-------------------------------
