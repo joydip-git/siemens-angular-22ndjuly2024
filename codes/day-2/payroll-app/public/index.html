@@ -5,11 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payroll App</title>
-    <script src="./src/index.js"></script>
 </head>
 
 <body>
     <h2>Payroll App</h2>
+    <fieldset>
+        <legend>Employee Details:</legend>
+        <div>
+            <label for="radioDev">Developer: &nbsp;</label>
+            <input type="radio" id="radioDev" value="dev" name="radioEmps">
+            &nbsp;&nbsp;&nbsp;
+            <label for="radioHr">Hr: &nbsp;</label>
+            <input type="radio" id="radioHr" value="hr" name="radioEmps">
+        </div>
+        <br>
+        <div>
+            <label for="ddlSort">Sort By: &nbsp;</label>
+            <br>
+            <select name="ddlSort" id="ddlSort">
+                <option value="0">--select--</option>
+                <option value="1">Id</option>
+                <option value="2">Name</option>
+                <option value="3">Salary</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="txtFilter">Filter By Salary: &nbsp;</label>
+            <input type="text" id="txtFilter">
+        </div>
+        <br>
+        <form>
+            <div>
+                <label for="txtId">Id: &nbsp;</label>
+                <input type="text" id="txtId">
+            </div>
+            <div>
+                <label for="txtName">Name: &nbsp;</label>
+                <input type="text" id="txtName">
+            </div>
+            <div>
+                <label for="txtBasic">Basic: &nbsp;</label>
+                <input type="text" id="txtBasic">
+            </div>
+            <div>
+                <label for="txtDa">Da: &nbsp;</label>
+                <input type="text" id="txtDa">
+            </div>
+            <div>
+                <label for="txtHra">Hra: &nbsp;</label>
+                <input type="text" id="txtHra">
+            </div>
+            <div>
+                <label for="txtExtra">Extra: &nbsp;</label>
+                <input type="text" id="txtExtra">
+            </div>
+            <div>
+                <input type="button" value="Submit" id="btnSubmit">
+            </div>
+        </form>
+    </fieldset>
+    <!-- <fieldset>
+        <div>
+            <input type="button" value="Calculate Salary" id="btnCalculate">
+            <input type="button" value="Print Employees" id="btnPrint">
+        </div>
+    </fieldset> -->
+    <!-- <script>
+        function clicked() {
+            window.alert('clicked...')
+        }
+    </script> -->
+    <!-- <button type="button" onclick="clicked()">Click Me!!</button> -->
+    <button type="button" id="btnClick">Click Me!!</button>
+    <script src="https://requirejs.org/docs/release/2.3.7/minified/require.js" data-main="../dist/index.js" async
+        defer></script>
 </body>
 
 </html>

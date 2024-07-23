@@ -57,5 +57,142 @@ Module Loaders:
 Common JS => Common JS Module loader
 AMD => Require JS (does not understand Common JS, ES6, UMD etc. other module formats)
 
+Angular 17:
+--------------------
+using a CLI tool: Angular CLI
+package-name: @angular/cli
+executable: ng
+command: 
+>npm install/i @angular/cli --location=global
+or
+>npm install/i @angular/cli -g/--global
+[global path: C:/users/<user-name>/AppData/Roaming/npm]
+
+check version: ng version
+
+features: 
+1. create new application
+2. run scripts (As present in package.json file) which takes care of code transpilation, bundling, loading the application in browser using a development server
+3. create components/services/directives/pipes/angular modules etc. 
+4. perform testing
+
+what is Angular?
+1. Client-side JS based framework
+2. SPA => Single Page Application
+
+Features:
+1. an application based on series of components
+2. facility to easily pass data between a component's template (view) and code (binding)
+3. facility to separate code based on separation of concern (MVC or MVVM), such as writing common business/data access logic using services
+4. superb DI framework
+5. routing feature
+6. write data tranformation logic at one place and use at many other places (pipe)
+7. create custom attributes for HTML or angular elements (directive) to extend the behavior of those elements
+8. segregate assets based of application feature (angular module)
+9. provides facility to make HTTP requests to backend RESTful API server
+10. facility to handle form data easily
+etc.
+
+angular cli (ng) uses...
+a. for unit testing: Jasmine as testing framework and Karma as test runner
+b. for transpilation: typescript compiler
+c. for bundling: webpack
+d. for loading app in browser (app dev server): webpack dev server
+
+angular framework library packages:
+"@angular/core": "^18.0.0", [all decorators]
+"@angular/common": "^18.0.0", => CommonModule registered here (where lots of built-in directives are registered)
+
+"@angular/platform-browser": "^18.0.0", => BrowserModule
+"@angular/platform-browser-dynamic": "^18.0.0",
+"@angular/forms": "^18.0.0",
+"@angular/router": "^18.0.0",
+"@angular/compiler": "^18.0.0",
+"@angular/animations": "^18.0.0",
+
+3rd party packages:
+"rxjs": "~7.8.0", => API for async programming based on observer pattern
+"tslib": "^2.3.0",
+"zone.js": "~0.14.3" 
+
+angular compilation: 
+a. JIT (Just-in-Time)
+b. AOT (Ahaed-of-Time)
+
+a.ts => a.js + a.js.map
+
+scripts:
+
+	 "start": "ng serve", => entire code is transpiled (in watch mode), then bundled (in dev mode by webpack bundler), then that transpiled and bundled code is supplied to app dev server (webpack dev server) which loads the app in the browser
+
+    "build": "ng build --configuration production", => entire code is transpiled, then bundled (in production mode using AOT by webpack bundler).
+
+    "watch": "ng build --watch --configuration development",  => entire code is transpiled (in watch mode), then bundled (in dev mode by webpack bundler).
+    
+	"test": "ng test" => entire code (along with unit test cases) is transpiled and then supplied to Jasmine-Karma.
+
+any asset
+folder name = asset name
+
+folder-name
+	component-name.component.ts => code file 
+		class-name: <component-name>Component
+
+file-name									class-name						decorator-name	
+component-name.component.ts		=> ComponentNameComponent			@Component()
+directive-name.directive.ts		=>	DirectiveNameDirective			@Directive()
+pipe-name.pipe.ts					=> PipeNamePipe						@Pipe()
+
+service-name.service.ts			=> ServiceNameService				--- (@Injectable)
+
+module-name.module.ts				=> ModuleNameModule				@NgModule()
+
+
+Angular Feature Module:
+
+feature modules: 
+	food-items module (class FoodItemsModule) => 3 comps, 2 pipes, 2 services, 1 directive
+	resturant module (class ResturantModule) => 3 comps, 2 pipes, 2 services, 1 directive
+	payment, cart, order, delivery, customer etc.
+
+@NgModule({
+    declarations: [], => registering component, directives and pipes ONLY
+    providers: [],	 => registering service providers ONLY
+    imports: [],		 => registering modules (built-in modules or feature modules of app)
+    exports: []       => mention the name of any already registered asset (component, directives and pipes, modules) which you want to export outside the scope of this module (except services)
+})
+
+@NgModule({
+	imports:[CommonModule],
+	exports:[CommonModule]
+})
+export class BrowserModule{
+}
+
+@NgModule({
+	declarations:[NgIfDirective],
+	exports:[NgIfDirective]
+})
+export class CommonModule{
+}
+
+@Directive({
+	selector:'[ngIf]'
+})
+export class NgIfDirective{
+}
+
+a.ts
+export const add =....
+how angular application runs:
+
+error messages:
+A required Injectable was not found in the dependency injection tree. If you are bootstrapping an NgModule, make sure that the `BrowserModule` is imported
+
+The module _AppModule was bootstrapped, but it does not declare "@NgModule.bootstrap" components nor a "ngDoBootstrap" method. Please define one of these
+
+
+
+
 
 

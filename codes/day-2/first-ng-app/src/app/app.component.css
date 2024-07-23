@@ -1,0 +1,10 @@
+h2 {
+    background-color: burlywood;
+    border-radius: 5px;
+    border-color: burlywood;
+    border-style: dotted;
+    border-width: 1px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 5px;
+}
