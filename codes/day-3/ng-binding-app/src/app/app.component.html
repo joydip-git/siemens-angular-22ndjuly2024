@@ -1,32 +1,33 @@
-<h2 *ngIf="showMessage" [style.width.px]="headerWidth">
-    {{message}}
-</h2>
-
-<br>
-
 <div>
-    <label for="txtWidth">Width:&nbsp;</label>
-    <input type="text" id="txtWidth" [value]="headerWidth" (change)="increaseWidth(+widthInput.value)" #widthInput>
-    <!-- const widthInput= documenet.get...()-->
+    <label for="radioAdd">Add: &nbsp;</label>
+    <input type="radio" name="calcRadios" id="radioAdd" (change)="updateChoice(1)">
+    &nbsp;&nbsp;
+    <label for="radioSub">Subtract: &nbsp;</label>
+    <input type="radio" name="calcRadios" id="radioSub" (change)="updateChoice(2)">
+    &nbsp;&nbsp;
+    <label for="radioMulti">Multiply: &nbsp;</label>
+    <input type="radio" name="calcRadios" id="radioMulti" (change)="updateChoice(3)">
+    &nbsp;&nbsp;
+    <label for="radioDiv">Divide: &nbsp;</label>
+    <input type="radio" name="calcRadios" id="radioDiv" (change)="updateChoice(4)">
 </div>
 <br>
-<!-- mentioning css class name directly-->
-<button type="button" class="button-style" (click)="increaseWidth(+widthInput.value)">Increase
-    Width</button>
-
+<form>
+    <div>
+        <label for="txtFirst">First: &nbsp;</label>
+        <input type="text" id="txtFirst" [value]="firstValue" (input)="updateFirst(+first.value)" #first>
+    </div>
+    <div>
+        <label for="txtSecond">Second: &nbsp;</label>
+        <!-- <input type="text" id="txtSecond" [value]="secondValue" (input)="updateSecond($event)" #second> -->
+        <input type="text" id="txtSecond" [value]="secondValue" (input)="updateSecond(+second.value)" #second>
+    </div>
+    <div>
+        <input type="button" value="Calculate" (click)="calculate()">
+    </div>
+</form>
 <br>
-<br>
-<!-- binding a property storing css class name using property binding-->
-&nbsp;&nbsp;
-<button type="button" [className]="defaultButtonClsName" (click)="changeShowMessage()">Regular</button>
-
-&nbsp;&nbsp;
-<button type="button" className="{{defaultButtonClsName}}">Interpolation</button>
-
-&nbsp;&nbsp;
-<button type="button" [ngClass]="showAlternate?alternateButtonClsName:defaultButtonClsName"
-    (click)="changeShowAlternate()">Property Binding</button>
-
-&nbsp;&nbsp;
-<button type="button" class="{{showAlternate?'button-alternate-style':'button-style'}}"
-    (click)="changeShowAlternate()">No Binding thorugh Prop</button>
+<div>
+    <label for="txtResult">Result: &nbsp;</label>
+    <input type="text" id="txtResult" readonly [value]="resultValue">
+</div>

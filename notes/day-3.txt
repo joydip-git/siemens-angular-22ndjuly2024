@@ -75,6 +75,8 @@ template reference variable
 
 change detection: through which angular detects the changes in the properties of the component and accordingly updates the template (view) of the component
 
+passing data from parent component to nested component and vice versa
+
 
 	
 

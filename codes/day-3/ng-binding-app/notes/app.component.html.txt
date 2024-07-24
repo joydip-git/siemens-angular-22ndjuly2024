@@ -1,0 +1,32 @@
+<h2 *ngIf="showMessage" [style.width.px]="headerWidth">
+    {{message}}
+</h2>
+
+<br>
+
+<div>
+    <label for="txtWidth">Width:&nbsp;</label>
+    <input type="text" id="txtWidth" [value]="headerWidth" (change)="increaseWidth(+widthInput.value)" #widthInput>
+    <!-- const widthInput= documenet.get...()-->
+</div>
+<br>
+<!-- mentioning css class name directly-->
+<button type="button" class="button-style" (click)="increaseWidth(+widthInput.value)">Increase
+    Width</button>
+
+<br>
+<br>
+<!-- binding a property storing css class name using property binding-->
+&nbsp;&nbsp;
+<button type="button" [className]="defaultButtonClsName" (click)="changeShowMessage()">Regular</button>
+
+&nbsp;&nbsp;
+<button type="button" className="{{defaultButtonClsName}}">Interpolation</button>
+
+&nbsp;&nbsp;
+<button type="button" [ngClass]="showAlternate?alternateButtonClsName:defaultButtonClsName"
+    (click)="changeShowAlternate()">Property Binding</button>
+
+&nbsp;&nbsp;
+<button type="button" class="{{showAlternate?'button-alternate-style':'button-style'}}"
+    (click)="changeShowAlternate()">No Binding thorugh Prop</button>
