@@ -87,8 +87,10 @@ template reference variable
 change detection: through which angular detects the changes in the properties of the component and accordingly updates the template (view) of the component
 
 
-services in Angular:
+services and DI in Angular:
 --------------------------------
+
+Part-1:
 Angular provides DI of services
 a. create service class with logic
 b. register a provider for that service
@@ -105,6 +107,20 @@ provider:
 	class name(useClass) => CalculationService
 
 c. consume the service (through constructor)
+
+Part-2:
+Role of interface w.r.t. service in Angular
+------------------------------------------------
+to provide loose coupling
+
+Part-3:
+@Injectable() decorator
+-------------------------------------
+Rule: in Angular everything (component, directive, pipe, module and even a service) that requires DI of some service(s), MUST BE decorated with @Injectable() decorator.
+
+In case of component, directive, pipe and module, this @Injectable() decorator is not needed to be declared explicitly, since their corresponding decorators (@Component(), @Directive(), @Pipe() and @NgModule()) already implements the @Injectable() decorator implicitly.
+But in case of service: since service class is decorated with any such decorator, hence if you need DI of some other service inside your service, then you should decorate your service with @Injectable()
+Best practice: always decorate your service with @Injectable() 
 
 error:
 NullInjectorError: No provider for CalculationService!

@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { CalculationService } from './services/calculation.service';
 import { SERVICE_TOKEN } from './constants/tokens';
+import { CalculationServiceContract } from './services/calculationservicecontract';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,7 @@ export class AppComponent {
     { name: 'joydip', id: 3, salary: 1000 }
   ]
   // people = []
-  private calcSvc: CalculationService;
+  //private calcSvc: CalculationService;
 
   //When @Inject() is not present, the injector uses the type annotation of the parameter as the provider.
   // constructor(svc: CalculationService) {
@@ -35,8 +36,14 @@ export class AppComponent {
   // }
 
   //When @Inject() is present, the injector uses the name provided as the provider. in this case type annotation of the parameter is only important to store the reference of the ame type service
-  constructor(@Inject(SERVICE_TOKEN) svc: CalculationService) {
-    this.calcSvc = svc;
+  // constructor(@Inject(SERVICE_TOKEN) svc: CalculationService) {
+  //   this.calcSvc = svc;
+  //   //this.calcSvc = new CalculationService()
+  // }
+
+  //provide reference of an instance of a service class, which is mapped to the given token AND implements the interface used as type annotation for the constructor parameter
+  constructor(@Inject(SERVICE_TOKEN) private calcSvc: CalculationServiceContract) {
+    //this.calcSvc = serviceRef;
     //this.calcSvc = new CalculationService()
   }
 

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { SERVICE_TOKEN, SERVICE_TYPE } from './constants/tokens';
+import { SampleService } from './services/sample.service';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SERVICE_TOKEN, SERVICE_TYPE } from './constants/tokens';
   //   }
   // ]
   providers: [
+    SampleService,
     {
       provide: SERVICE_TOKEN,
       useClass: SERVICE_TYPE

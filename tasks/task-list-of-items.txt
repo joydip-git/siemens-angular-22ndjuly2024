@@ -14,10 +14,20 @@ src
 		app.component.spec.ts
 		app.module.ts
 
-		product-list (folder)
-			product-list.component.ts	 => ProductListComponent (register with AppModule)
-			product-list.component.html  => render the list of products here using a <table> element [col-1: image, col-2: name, col-3: price and col-4: rating]
-			product-list.component.css
+		products (feature module folder)
+			products.module.ts (module file)
+
+			services (sub-directory for services)
+				productservicecontract.ts => interface with method declarations
+					getProducts => returns the product array from products.ts file in data folder
+				product.service.ts			=> service class implementation
+				[register this service with products.module.ts with a custom provider configuration]
+
+			components (sub-directory for components)
+				product-list (component folder)
+				product-list.component.ts	 => ProductListComponent (register with AppModule) and fetch product records via a ProductService by consuming the service instance
+				product-list.component.html  => render the list of products here using a <table> element [col-1: image, col-2: name, col-3: price and col-4: rating]
+				product-list.component.css
 		
 	
 
