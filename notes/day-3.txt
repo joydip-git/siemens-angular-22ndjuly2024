@@ -1,0 +1,82 @@
+bootstrapper component:
+the component(s) whose design will be directly rendered in the index.html file by default, when the application runs
+
+bootstrap:[C1, C2,...]
+
+<app-c1></app-c1>
+<app-c2></app-c2>
+....
+
+Another component is nested in App component
+App component => parent
+Another component => nested (child)
+
+whether a component can be nested in another component?
+yes, if they are registered with the same module (because assets registered with same module can be accessed from one another)
+not directly, if they are NOT registered with the same module (because assets registered with different modules can't be directly accessed from one another), until and unless one module is registered with another and the asset that you are accessing is mentioned in the exports array of that module
+
+
+binding in angular: helps you pass data from view (template) to code and vice versa using simple declarative syntaxes
+a. pass data from code to template (view): data binding
+	1. {{}} => imterpolation (this converts any data to string and then displays)
+	2. []   => property binding (this does not convert any data to string)
+
+b. pass data from template to code: event-binding
+	<element (event-name)="method-from-code(any data)">
+
+both above mentioned bindings are one-way binding
+
+any element applying both, but seperately => two-way binding (combination of two one-way bindings)
+** any element applying both together => two-way binding 
+
+
+directives: custom attributes used with any element (custom element, i.e. components or HTMl elements), which are understood by angular. they extend the behavior of an element.
+
+a. structural directives: *ngIf, *ngIfElse, *ngSwicth, *ngFor
+	they help you manipulate DOM
+b. attribute directives: ngClass, ngStyle, many more like this
+	they just extend the behavior of element
+c. component directives: that's none other than your components. that's the ONLY directive with deisgn (view/template)
+Note: component directives (or simply components) are used like custom html element/tag, since they have template. all other (structural and atribute) directives are used like custom attributes of element/tag
+
+@Directive({
+selector:'[ngIf]'
+})
+class NgIfDirective{
+	method(template,prop){
+		
+	}
+}
+
+@Directive({
+selector:'[ngClass]'})
+class NgClassDirective{
+	method(template,prop){
+		
+	}
+}
+
+@NgModule({
+declarations:[NgIfDirective,NgClassDirective],
+exports: [NgIfDirective,NgClassDirective]
+})
+class CommonModule{
+}
+
+@NgModule({
+imports:[CommonModule],
+exports: [CommonModule]
+})
+class BrowserModule{
+}
+
+template reference variable
+<template #var-name>
+
+change detection: through which angular detects the changes in the properties of the component and accordingly updates the template (view) of the component
+
+
+	
+
+
+
