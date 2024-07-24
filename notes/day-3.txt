@@ -78,14 +78,37 @@ exports: [CommonModule]
 class BrowserModule{
 }
 
+BrowserModule needs to be imported ONLY in the root module, for bootstrapper component to be loaded in the index.html file in the browser.
+Since, CommonModule is a child of BrowserModule and BrowserModule re-exports it hence many built-in directives, which are regsitered with CommonModule are automatically available in the root module assets. In case you have other feature module, directly import CommonModule.
+
 template reference variable
 <template #var-name>
 
 change detection: through which angular detects the changes in the properties of the component and accordingly updates the template (view) of the component
 
+
+services in Angular:
+--------------------------------
+Angular provides DI of services
+a. create service class with logic
+b. register a provider for that service
+	- how and where????
+
+	Q1. individual instance for every asset
+	Q2. singleton instance for all assets of a feature module
+	Q3. singleton instance for all assets of the entire application
+
+Injector => at asset level, at feature module and application level
+providers:[CalcularionService]
+provider:
+	token name(provide) => CalculationService or 'SERVICE_TOKEN'
+	class name(useClass) => CalculationService
+
+c. consume the service (through constructor)
+
+error:
+NullInjectorError: No provider for CalculationService!
+
+
 component interaction:
 passing data from parent component to nested component and vice versa
-
-for(let p of this.people){
-	<li>
-}

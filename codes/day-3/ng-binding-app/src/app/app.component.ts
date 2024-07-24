@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { CalculationService } from './services/calculation.service';
+import { SERVICE_TOKEN } from './constants/tokens';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  //providers: [CalculationService]
 })
 export class AppComponent {
   message = "Welcome to Binding in Angular";
@@ -16,13 +19,26 @@ export class AppComponent {
   firstValue = 0
   secondValue = 0
   resultValue = 0
-  //people = ['sunil', 'anil', 'joydip']
-  // people = [
-  //   { name: 'sunil', id: 2, salary: 3000 },
-  //   { name: 'anil', id: 1, salary: 2000 },
-  //   { name: 'joydip', id: 3, salary: 1000 }
-  // ]
-  people = []
+  // people = ['sunil', 'anil', 'joydip']
+  people = [
+    { name: 'sunil', id: 2, salary: 3000 },
+    { name: 'anil', id: 1, salary: 2000 },
+    { name: 'joydip', id: 3, salary: 1000 }
+  ]
+  // people = []
+  private calcSvc: CalculationService;
+
+  //When @Inject() is not present, the injector uses the type annotation of the parameter as the provider.
+  // constructor(svc: CalculationService) {
+  //   this.calcSvc = svc;
+  //   //this.calcSvc = new CalculationService()
+  // }
+
+  //When @Inject() is present, the injector uses the name provided as the provider. in this case type annotation of the parameter is only important to store the reference of the ame type service
+  constructor(@Inject(SERVICE_TOKEN) svc: CalculationService) {
+    this.calcSvc = svc;
+    //this.calcSvc = new CalculationService()
+  }
 
   increaseWidth(newWidth: number) {
     this.headerWidth = newWidth
@@ -37,16 +53,16 @@ export class AppComponent {
   calculate() {
     switch (this.selectionChoice) {
       case 1:
-        this.resultValue = this.firstValue + this.secondValue
+        this.resultValue = this.calcSvc.add(this.firstValue, this.secondValue)
         break;
       case 2:
-        this.resultValue = this.firstValue - this.secondValue
+        this.resultValue = this.calcSvc.subtract(this.firstValue, this.secondValue)
         break;
       case 3:
-        this.resultValue = this.firstValue * this.secondValue
+        this.resultValue = this.calcSvc.multiply(this.firstValue, this.secondValue)
         break;
       case 4:
-        this.resultValue = this.firstValue / this.secondValue
+        this.resultValue = this.calcSvc.divide(this.firstValue, this.secondValue)
         break;
 
       default:
