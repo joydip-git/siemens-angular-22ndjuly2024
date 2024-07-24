@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-modules-app": {
+    "ng-component-interaction-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {

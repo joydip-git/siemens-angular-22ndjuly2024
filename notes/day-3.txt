@@ -56,9 +56,17 @@ class NgClassDirective{
 	}
 }
 
+@Directive({
+selector:'[ngFor]'})
+class NgForOfDirective{
+	method(template,prop){
+		
+	}
+}
+
 @NgModule({
-declarations:[NgIfDirective,NgClassDirective],
-exports: [NgIfDirective,NgClassDirective]
+declarations:[NgIfDirective,NgClassDirective,NgForOfDirective],
+exports: [NgIfDirective,NgClassDirective,NgForOfDirective]
 })
 class CommonModule{
 }
@@ -75,10 +83,9 @@ template reference variable
 
 change detection: through which angular detects the changes in the properties of the component and accordingly updates the template (view) of the component
 
+component interaction:
 passing data from parent component to nested component and vice versa
 
-
-	
-
-
-
+for(let p of this.people){
+	<li>
+}

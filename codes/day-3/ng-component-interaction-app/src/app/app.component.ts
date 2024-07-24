@@ -16,13 +16,6 @@ export class AppComponent {
   firstValue = 0
   secondValue = 0
   resultValue = 0
-  //people = ['sunil', 'anil', 'joydip']
-  // people = [
-  //   { name: 'sunil', id: 2, salary: 3000 },
-  //   { name: 'anil', id: 1, salary: 2000 },
-  //   { name: 'joydip', id: 3, salary: 1000 }
-  // ]
-  people = []
 
   increaseWidth(newWidth: number) {
     this.headerWidth = newWidth

@@ -34,29 +34,3 @@
 
 <br>
 <br>
-
-<ng-template #alternate>
-    <span>
-        No people available
-    </span>
-</ng-template>
-
-<div *ngIf="people.length>0;else alternate">
-    <h3>List of Names:</h3>
-    <br>
-    <ol type="i">
-        <li *ngFor="let p of people">{{p.name}}</li>
-    </ol>
-    <ul type="square">
-        <li *ngFor="let p of people">{{p.name}}</li>
-    </ul>
-    <br>
-    <br>
-    <label for="ddlPeople">Select a Person: &nbsp;</label>
-    <select id="ddlPeople">
-        <option value="0" selected disabled>--select--</option>
-        <option [value]="p.id" *ngFor="let p of people">
-            {{p.name}}:{{p.salary}}
-        </option>
-    </select>
-</div>
