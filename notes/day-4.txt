@@ -1,0 +1,21 @@
+pipe:
+	transformer
+
+template:
+	{{prod.productName | uppercase }}
+	{{prod.description | lowercase }}
+	{{prod.price | currency:'INR':'0-2' }}
+
+@Pipe({ name:'uppercase'})
+class UppercasePipe{
+	transform(val:any,...args:any[]){
+		return condition?transformed-value:value;
+	}
+}
+
+new UppercasePipe().transform(prod.productName)
+new UppercasePipe().transform(prod.price,'INR','0-2')
+
+<app-product-list> => selector for a component
+
+<h2 *ngIf="show"> => selector for a directive

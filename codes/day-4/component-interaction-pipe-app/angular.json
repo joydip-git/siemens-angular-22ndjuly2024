@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-component-interaction-app": {
+    "component-interaction-pipe-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ng-binding-app",
+            "outputPath": "dist/component-interaction-pipe-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ng-binding-app:build:production"
+              "buildTarget": "component-interaction-pipe-app:build:production"
             },
             "development": {
-              "buildTarget": "ng-binding-app:build:development"
+              "buildTarget": "component-interaction-pipe-app:build:development"
             }
           },
           "defaultConfiguration": "development"

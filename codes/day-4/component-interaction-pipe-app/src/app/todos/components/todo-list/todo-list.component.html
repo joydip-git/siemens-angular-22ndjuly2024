@@ -1,0 +1,28 @@
+<div>
+    <label for="ddlSort">Sort By: &nbsp;</label>
+    <select name="ddlSort" id="ddlSort" (change)="updateSelection($event)">
+        <option value="0" selected disabled>--select--</option>
+        <option value="1">Id</option>
+        <option value="2">User Id</option>
+        <option value="3">Title</option>
+    </select>
+</div>
+<br>
+<table *ngIf="todos.length>0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>User Id</th>
+            <th>Title</th>
+            <th>Completed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let td of (todos|sorttodos:selectedOption)">
+            <td>{{td.id}}</td>
+            <td>{{td.userId}}</td>
+            <td>{{td.title}}</td>
+            <td>{{td.completed?'yes':'no'}}</td>
+        </tr>
+    </tbody>
+</table>

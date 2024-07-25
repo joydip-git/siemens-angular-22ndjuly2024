@@ -17,6 +17,9 @@ src
 		products (feature module folder)
 			products.module.ts (module file)
 
+			pipes:
+				pipe-name.pipe.ts => register with products.module.ts
+
 			services (sub-directory for services)
 				productservicecontract.ts => interface with method declarations
 					getProducts => returns the product array from products.ts file in data folder
@@ -27,6 +30,7 @@ src
 				product-list (component folder)
 				product-list.component.ts	 => ProductListComponent (register with AppModule) and fetch product records via a ProductService by consuming the service instance
 				product-list.component.html  => render the list of products here using a <table> element [col-1: image, col-2: name, col-3: price and col-4: rating]
+				also, filter the products using the custom pipe by the product name entered in the text box
 				product-list.component.css
 		
 	
