@@ -67,3 +67,43 @@ changes			OnChanges				ngOnChanges
 init				OnInit					ngOnInit
 
 
+HTTP requests:
+--------------------------------------
+package: @angular/common/http
+module: HttpClientModule [providers:[HttpClient]]
+built-in service class: HttpClient
+
+you must import the HttpClientModule wherever you service, which is consuming the HttpClient service, is regsitered
+
+HttpClient => 
+get(): GET,
+post(): POST, 
+put():PUT, 
+delete():DELETE, 
+patch():PATCH,
+
+get<Product>(): GET,
+post(): POST, 
+put():PUT, 
+delete():DELETE, 
+patch():PATCH,
+...
+package: rxjs
+
+product => 
+Observable => Response<any>
+Observer => {
+		next?:(data:any) =>{ ...},
+		error?:(err) => { ...},
+		complete?:()=>{ }
+	}
+.subscribe(observer-object)
+
+Subject, BehaviorSubject, ReplaySubject
+
+
+
+
+
+
+

@@ -1,5 +1,11 @@
 RESTful API description:
 
+response model:
+{
+	"message":"...",
+	"data":product-array|product-object|null
+}
+
 URL										HTTP method			data			response
 -------------------------------------------------------------------------------------------------
 get all products

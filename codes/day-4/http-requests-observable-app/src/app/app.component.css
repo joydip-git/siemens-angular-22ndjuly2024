@@ -1,0 +1,30 @@
+h2 {
+    background-color: burlywood;
+    text-align: center;
+}
+
+.button-style {
+    background-color: blueviolet;
+    border-color: blueviolet;
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.button-alternate-style {
+    background-color: grey;
+    border-color: green;
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    color: black;
+    text-align: center;
+    padding: 5px;
+}

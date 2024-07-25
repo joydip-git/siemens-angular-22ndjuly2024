@@ -1,0 +1,12 @@
+1. clone the repo
+2. open the "product-service-backend" app in VS code
+3. in the terminal type "npm i" to install node_modules
+4. at the root of the app directory (product-service-backend), add a file => ".env"
+5. copy the settings from shared "env.txt" file
+6. run the script "npm start"
+
+the server is exposing two URLs:
+http://127.0.0.1:3003/products
+http://127.0.0.1:3003/auth
+
+to use the server and send request refer the "backend-details.txt"
