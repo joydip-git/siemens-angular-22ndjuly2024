@@ -1,4 +1,8 @@
-<div>
+<!-- <app-filter (sortSelectionChanged)="updateSelection($event)" (clickFired)="clickHandler()"></app-filter> -->
+
+<app-filter (sortChoiceChanged)="updateSelection($event)" (clickFired)="clickHandler()"></app-filter>
+
+<!-- <div>
     <label for="ddlSort">Sort By: &nbsp;</label>
     <select name="ddlSort" id="ddlSort" (change)="updateSelection($event)">
         <option value="0" selected disabled>--select--</option>
@@ -6,7 +10,8 @@
         <option value="2">User Id</option>
         <option value="3">Title</option>
     </select>
-</div>
+</div> -->
+
 <br>
 <table *ngIf="todos.length>0">
     <thead>
@@ -21,8 +26,22 @@
         <tr *ngFor="let td of (todos|sorttodos:selectedOption)">
             <td>{{td.id}}</td>
             <td>{{td.userId}}</td>
-            <td>{{td.title}}</td>
+            <td>
+                <u (click)="updateSelectedTodoId(td.id)">{{td.title}}</u>
+            </td>
             <td>{{td.completed?'yes':'no'}}</td>
         </tr>
     </tbody>
 </table>
+<br>
+
+<button type="button" (click)="selectedTodoId=0">{{selectedTodoId>0?'reset':'select a todo'}}</button>
+<br>
+<div *ngIf="selectedTodoId>0">
+    selected id: &nbsp;{{selectedTodoId}}
+    <br>
+    <!-- <app-todo-detail [selectedTodo]="selectedTodoId">
+    </app-todo-detail> -->
+    <app-todo-detail [selectedTodoValue]="selectedTodoId">
+    </app-todo-detail>
+</div>

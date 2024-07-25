@@ -3,9 +3,10 @@ import { ProductListComponent } from "./components/product-list/product-list.com
 import { CommonModule } from "@angular/common";
 import { PRODUCT_SERVICE_TOKEN, PRODUCT_SERVICE_TYPE } from "../../config/constants";
 import { FilterProductPipe } from "./pipes/filter-product.pipe";
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
-    declarations: [ProductListComponent, FilterProductPipe],
+    declarations: [ProductListComponent, FilterProductPipe, FilterComponent],
     imports: [CommonModule],
     providers: [
         {

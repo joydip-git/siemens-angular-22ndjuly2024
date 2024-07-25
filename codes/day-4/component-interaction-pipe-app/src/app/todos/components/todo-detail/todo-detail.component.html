@@ -1,0 +1,6 @@
+<ng-template #nodata>
+    <span>No data</span>
+</ng-template>
+<p *ngIf="todo;else nodata">
+    Task: &nbsp;{{todo.title}}:{{todo.completed?'completed':'not completed'}}
+</p>

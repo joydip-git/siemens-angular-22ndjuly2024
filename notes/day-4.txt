@@ -19,3 +19,51 @@ new UppercasePipe().transform(prod.price,'INR','0-2')
 <app-product-list> => selector for a component
 
 <h2 *ngIf="show"> => selector for a directive
+
+Angular CLI to generate assets:
+------------------------------------
+ng generate/g component/c|module/m|service/s|directive/d|pipe/p [path]/<asset-name> --standalone=false --skip-tests
+
+ng generate module/m orders => app>orders>orders.module.ts
+ng g c orders/components/order-list --standalone=false => 
+	app>orders>components>order-list>order-list.component.ts+.html+.css+.spec.ts
+ng g s orders/services/order => app>orders>services>order.service.ts+.spec.ts
+ng g p orders/pipes/filter-order => app>orders>pipes>filter-order.pipe.ts+.spec.ts
+ng g d orders/directives/sample => app>orders>directives>sample.directive.ts+.spec.ts
+
+component interaction:
+parent to nested => via data binding
+a. create a property 
+b. decorate the same with @Input() decorator
+c. use this property in parent component's design (where you have nested this nested component) to pass data from parent to th nested by binding that @Inout() decorated property with parent component's property
+
+nested to parent => via event binding
+a. create a propety and attach an event-emitter object for nested component 
+b. fire the event and emit any value that you want or don't
+c. handle the event in the parent component's design (where you have nested this nested component), by attaching an event handler method, written in the parent component's code.
+d. to pass the data emitted by the event to parent use $event while calling the event handler method
+
+
+lifecycle of components:
+-----------------------------------
+creation: 
+	constructor, 
+	changes: gets fired when a component receives data from its parent via @Input() decorated property
+	init: gets fired ONLY once in the lifecyle of a component and that is just after the changes event during creation of the component
+
+updation: 
+	changes: gets fired when a component receives fresh/updated data from its parent via @Input() decorated property
+
+destruction:
+
+
+how to handle component events: attach event handlers
+
+event-name		interface			event-handler (method) name
+---------------------------------------------------------------
+X					OnX						ngOnX	
+
+changes			OnChanges				ngOnChanges
+init				OnInit					ngOnInit
+
+

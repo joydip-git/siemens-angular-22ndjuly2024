@@ -4,17 +4,19 @@
 
 <div *ngIf="products && products.length>0;else norecord">
     <br>
-    <div>
+    <!-- <div>
         <label for="txtFilter">Filter By Product Name: &nbsp;</label>
         <input type="text" id="txtFilter" [value]="filterText" (input)="updateFilterText(filterInput.value)"
             #filterInput>
-    </div>
+    </div> -->
 
     <header>
         <h2>List of Products</h2>
     </header>
     <br>
 
+    <app-filter (filterTextChanged)="updateFilterText($event)"></app-filter>
+    <br>
     <table class="table table-hover">
         <thead>
             <tr>
