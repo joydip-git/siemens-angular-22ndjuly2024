@@ -22,8 +22,6 @@
 
 	http://localhost:4200/todos/edit?id=3
 
-2. Form Handling
-
 <button type="button" (click)="call()">{{text}}</button>
 class AppComponent{ text='Click Me!!!' call(){...}}
 
@@ -46,6 +44,33 @@ libraries => runtime.js, vendor.js
 
 html => <body> ... <script src="./bundle.js">
 
+2. Form Handling:
+package: @angular/forms
+
+template-driven form:
+module: FormsModule
+directive: ngModel, ngForm, required, email, max, min, range,.....
+types: FormComtrol, FormGroup,...
+
+@Directive({
+selector:'[required]'
+})
+class RequiredValidator{
+	validate(control:AbstractControl):ValidationErrors|null{
+		return Validators.required(control);
+	}
+}
+
+
+reactive form handling:
+module: ReactiveFormsModule
+directives: formComtrol, formGroup, formControlName, formGroupName
+
+class Validators{
+	static required(control:AbstractControl):ValidationErrors|null{
+		return null | { required:true};
+	}
+}
 
 
 

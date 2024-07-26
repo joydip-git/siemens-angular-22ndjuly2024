@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { todosRoutes } from './todos.routes';
 import { UpdateTodoComponent } from './components/update-todo/update-todo.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddTodoComponent } from './components/add-todo/add-todo.component';
 
 @NgModule({
     // imports: [CommonModule, HttpClientModule, RouterModule.forRoot(todosRoutes)],
-    imports: [CommonModule, HttpClientModule, RouterModule.forChild(todosRoutes)],
+    imports: [CommonModule, HttpClientModule, RouterModule.forChild(todosRoutes), FormsModule, ReactiveFormsModule],
     exports: [TodoListComponent],
-    declarations: [TodoListComponent, TodoSortPipe, FilterComponent, TodoDetailComponent, UpdateTodoComponent],
+    declarations: [TodoListComponent, TodoSortPipe, FilterComponent, TodoDetailComponent, UpdateTodoComponent, AddTodoComponent],
     providers: [
         {
             provide: TODO_SERVICE_TOKEN,

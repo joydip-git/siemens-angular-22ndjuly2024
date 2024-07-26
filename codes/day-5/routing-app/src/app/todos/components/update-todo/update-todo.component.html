@@ -10,26 +10,34 @@
 <div *ngIf="fetchComplete;else loadingTemplate">
     <div *ngIf="errorInfo==='';else erorTemplate">
         <div *ngIf="todo;else noDataTemplate">
-            <form>
+            <form ngForm #frm="ngForm" (submit)="submitData(frm)">
                 <div>
                     <label for="txtId">Id: &nbsp;</label>
-                    <input type="text" id="txtId" [value]="todo.id" readonly>
+                    <input type="text" id="txtId" [(ngModel)]="todo.id" readonly #inputId name="id">
                 </div>
                 <div>
                     <label for="txtUserId">For User: &nbsp;</label>
-                    <input type="text" id="txtUserId" [value]="todo.userId">
+                    <input type="text" id="txtUserId" [(ngModel)]="todo.userId" #inputUserId="ngModel" name="userId"
+                        required>
+                </div>
+                <!-- <div *ngIf="frm.form.controls['userid'].errors"> -->
+                <div *ngIf="inputUserId.control.errors">
+                    <span *ngIf="inputUserId.control.errors?.['required']">
+                        enter user id
+                    </span>
                 </div>
                 <div>
                     <label for="txtTitle">Task: &nbsp;</label>
-                    <input type="text" id="txtTitle" [value]="todo.title">
+                    <!-- <input type="text" id="txtTitle" [value]="todo.title" ngModel name="title" #inputTitle="ngModel"> -->
+                    <input type="text" id="txtTitle" [(ngModel)]="todo.title" name="title" #inputTitle required>
                 </div>
                 <div>
                     <label for="txtStatus">Done?: &nbsp;</label>
-                    <input type="checkbox" id="txtStatus" [checked]="todo.completed">
+                    <input type="checkbox" id="txtStatus" [(ngModel)]="todo.completed" #inputCompleted name="completed">
                     &nbsp;&nbsp;{{todo.completed?'yes':'no'}}
                 </div>
                 <div>
-                    <input type="button" value="Submit">
+                    <input type="submit" value="Submit" [disabled]="frm.form.invalid">
                 </div>
             </form>
         </div>

@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 import { TodoListComponent } from "./components/todo-list/todo-list.component";
 import { TodoDetailComponent } from "./components/todo-detail/todo-detail.component";
 import { UpdateTodoComponent } from "./components/update-todo/update-todo.component";
+import { AddTodoComponent } from "./components/add-todo/add-todo.component";
 
 // export const todosRoutes: Routes = [
 //     {
@@ -30,6 +31,10 @@ export const todosRoutes: Routes = [
             {
                 path: 'edit',
                 component: UpdateTodoComponent
+            },
+            {
+                path: 'add',
+                component: AddTodoComponent
             }
         ]
     },
