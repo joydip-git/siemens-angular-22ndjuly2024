@@ -1,0 +1,56 @@
+<ng-template #norecord>
+    <span>No records</span>
+</ng-template>
+
+<!-- <ul>
+    <li *ngFor="let p of (productObs|async)?.data">
+        {{p.productName}}
+    </li>
+</ul> -->
+
+<div *ngIf="products && products.length>0;else norecord">
+    <br>
+    <!-- <div>
+        <label for="txtFilter">Filter By Product Name: &nbsp;</label>
+        <input type="text" id="txtFilter" [value]="filterText" (input)="updateFilterText(filterInput.value)"
+            #filterInput>
+    </div> -->
+
+    <header>
+        <h2>List of Products</h2>
+    </header>
+    <br>
+
+    <app-filter (filterTextChanged)="updateFilterText($event)"></app-filter>
+    <br>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Rating</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody class="table-dark">
+            <tr *ngFor="let p of products|productfilter:filterText">
+                <td>
+                    <img class="img-size" [src]="p.imageUrl" alt="NA" [title]="p.productName">
+                </td>
+                <td>
+                    {{p.productName}}
+                </td>
+                <td>
+                    {{p.price}}
+                </td>
+                <td>
+                    {{p.starRating}}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

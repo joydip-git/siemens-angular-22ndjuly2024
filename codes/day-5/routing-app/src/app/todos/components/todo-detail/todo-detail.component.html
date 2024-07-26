@@ -1,0 +1,16 @@
+<ng-template #loadingTemplate>
+    <span>Loading...</span>
+</ng-template>
+<ng-template #erorTemplate>
+    <span>{{errorInfo}}</span>
+</ng-template>
+<ng-template #noDataTemplate>
+    <span>No records.</span>
+</ng-template>
+<div *ngIf="fetchComplete;else loadingTemplate">
+    <div *ngIf="errorInfo==='';else erorTemplate">
+        <p *ngIf="todo;else noDataTemplate">
+            Task: &nbsp;{{todo.title}}:{{todo.completed?'completed':'not completed'}}
+        </p>
+    </div>
+</div>

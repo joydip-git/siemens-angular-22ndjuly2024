@@ -1,0 +1,11 @@
+<div>
+    <label for="ddlSort">Sort By: &nbsp;</label>
+    <select name="ddlSort" id="ddlSort" (change)="updateSortSelection(+sortInput.value)" #sortInput>
+        <option value="0" selected disabled>--select--</option>
+        <option value="1">Id</option>
+        <option value="2">User Id</option>
+        <option value="3">Title</option>
+    </select>
+    <br>
+    <button type="button" (click)="handleClick()">Click</button>
+</div>
