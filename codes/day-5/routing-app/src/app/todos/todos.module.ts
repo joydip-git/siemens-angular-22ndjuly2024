@@ -8,12 +8,13 @@ import { TodoDetailComponent } from './components/todo-detail/todo-detail.compon
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { todosRoutes } from './todos.routes';
+import { UpdateTodoComponent } from './components/update-todo/update-todo.component';
 
 @NgModule({
     // imports: [CommonModule, HttpClientModule, RouterModule.forRoot(todosRoutes)],
     imports: [CommonModule, HttpClientModule, RouterModule.forChild(todosRoutes)],
     exports: [TodoListComponent],
-    declarations: [TodoListComponent, TodoSortPipe, FilterComponent, TodoDetailComponent],
+    declarations: [TodoListComponent, TodoSortPipe, FilterComponent, TodoDetailComponent, UpdateTodoComponent],
     providers: [
         {
             provide: TODO_SERVICE_TOKEN,

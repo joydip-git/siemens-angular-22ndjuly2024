@@ -1,0 +1,37 @@
+<ng-template #loadingTemplate>
+    <span>Loading...</span>
+</ng-template>
+<ng-template #erorTemplate>
+    <span>{{errorInfo}}</span>
+</ng-template>
+<ng-template #noDataTemplate>
+    <span>No records...</span>
+</ng-template>
+<div *ngIf="fetchComplete;else loadingTemplate">
+    <div *ngIf="errorInfo==='';else erorTemplate">
+        <div *ngIf="todo;else noDataTemplate">
+            <form>
+                <div>
+                    <label for="txtId">Id: &nbsp;</label>
+                    <input type="text" id="txtId" [value]="todo.id" readonly>
+                </div>
+                <div>
+                    <label for="txtUserId">For User: &nbsp;</label>
+                    <input type="text" id="txtUserId" [value]="todo.userId">
+                </div>
+                <div>
+                    <label for="txtTitle">Task: &nbsp;</label>
+                    <input type="text" id="txtTitle" [value]="todo.title">
+                </div>
+                <div>
+                    <label for="txtStatus">Done?: &nbsp;</label>
+                    <input type="checkbox" id="txtStatus" [checked]="todo.completed">
+                    &nbsp;&nbsp;{{todo.completed?'yes':'no'}}
+                </div>
+                <div>
+                    <input type="button" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

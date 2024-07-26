@@ -3,6 +3,7 @@ import { TODO_SERVICE_TOKEN } from '../../../config/constants';
 import { ServiceContract } from '../../services/servicecontract';
 import { Todo } from '../../../../models/todo';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-todo-list',
@@ -17,9 +18,18 @@ export class TodoListComponent implements OnInit, OnDestroy {
     private fetchSubsciption?: Subscription;
     selectedOption = 0;
 
-    constructor(@Inject(TODO_SERVICE_TOKEN) private todoService: ServiceContract) {
+    constructor(
+        @Inject(TODO_SERVICE_TOKEN) private todoService: ServiceContract,
+        private router: Router
+    ) {
 
     }
+
+    goToDetailView(e: Event, id: number) {
+        e.preventDefault();
+        this.router.navigate(['/todos/view', id])
+    }
+
     ngOnDestroy(): void {
         this.fetchSubsciption?.unsubscribe()
     }

@@ -4,7 +4,7 @@
 	package: @angular/router
 	module: RouterModule
 	
-	service: Router (router engine)
+	service: Router (router engine), ActivatedRoute, RouterState
    directive: router-outlet, ..
 
 	types: Route, Routes (= Route[])
@@ -12,12 +12,15 @@
 
 	register the routes array with Router Engine through RouterModule
 
-	path: 'todos/:id'
-	http://localhost:4200/todos/1
+	path: 'todos/:id/categories/:cid/products/:pid'
+	http://localhost:4200/todos/3
 
+	
 	{
-		id:"1"
+		id:"3"
 	}
+
+	http://localhost:4200/todos/edit?id=3
 
 2. Form Handling
 

@@ -28,7 +28,8 @@
                         <td>{{td.id}}</td>
                         <td>{{td.userId}}</td>
                         <td>
-                            <a [routerLink]="['/todos',td.id]">{{td.title}}</a>
+                            <!-- <a [routerLink]="['/todos/view',td.id]">{{td.title}}</a> -->
+                            <u (click)="goToDetailView($event,td.id)">{{td.title}}</u>
                         </td>
                         <td>{{td.completed?'yes':'no'}}</td>
                     </tr>
