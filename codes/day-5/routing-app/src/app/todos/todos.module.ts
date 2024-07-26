@@ -6,9 +6,12 @@ import { TodoSortPipe } from './pipes/todo-sort.pipe';
 import { FilterComponent } from './components/filter/filter.component';
 import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { todosRoutes } from './todos.routes';
 
 @NgModule({
-    imports: [CommonModule, HttpClientModule],
+    // imports: [CommonModule, HttpClientModule, RouterModule.forRoot(todosRoutes)],
+    imports: [CommonModule, HttpClientModule, RouterModule.forChild(todosRoutes)],
     exports: [TodoListComponent],
     declarations: [TodoListComponent, TodoSortPipe, FilterComponent, TodoDetailComponent],
     providers: [

@@ -1,2 +1,49 @@
 1. Routing
+	Client-side routing:
+
+	package: @angular/router
+	module: RouterModule
+	
+	service: Router (router engine)
+   directive: router-outlet, ..
+
+	types: Route, Routes (= Route[])
+	Route => path, component
+
+	register the routes array with Router Engine through RouterModule
+
+	path: 'todos/:id'
+	http://localhost:4200/todos/1
+
+	{
+		id:"1"
+	}
+
 2. Form Handling
+
+<button type="button" (click)="call()">{{text}}</button>
+class AppComponent{ text='Click Me!!!' call(){...}}
+
+bundle.js
+/**/
+function AppComponent(){
+	this.text = 'Click Me!!!'
+	this.call = function(){}
+<button type="button" (click)="call()">{{text}}</button>
+
+=> this.button = document.createElement('button',{type:'button' value:this.text})
+	this.button.addEventListener('click', this.call)
+}
+
+css => bundle.css.js
+
+assets => images
+
+libraries => runtime.js, vendor.js
+
+html => <body> ... <script src="./bundle.js">
+
+
+
+
+

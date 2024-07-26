@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Todo } from '../../../../models/todo';
 import { TODO_SERVICE_TOKEN } from '../../../config/constants';
 import { ServiceContract } from '../../services/servicecontract';
@@ -9,23 +9,21 @@ import { Subscription } from 'rxjs';
   templateUrl: './todo-detail.component.html',
   styleUrl: './todo-detail.component.css'
 })
-export class TodoDetailComponent implements OnChanges, OnDestroy {
-  @Input('selectedTodoValue') selectedTodo = 0;
+export class TodoDetailComponent implements OnInit, OnDestroy {
   todo: Todo | undefined;
   fetchComplete = false;
   errorInfo = ''
   private fetchSubsciption?: Subscription;
 
   constructor(@Inject(TODO_SERVICE_TOKEN) private todoSvc: ServiceContract) {
-    console.log("in ctor: ", this.selectedTodo);
+
   }
   ngOnDestroy(): void {
     this.fetchSubsciption?.unsubscribe()
   }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("in changes: ", this.selectedTodo);
+  ngOnInit(): void {
     this.fetchSubsciption = this.todoSvc
-      .getTodo(this.selectedTodo)
+      .getTodo(1)
       .subscribe({
         next: (todoResp) => {
           this.todo = todoResp
