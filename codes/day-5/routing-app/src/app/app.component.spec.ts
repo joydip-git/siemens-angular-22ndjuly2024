@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -13,6 +14,13 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   });
+
+  afterEach(async () => {
+    //clean up resource
+  })
+
+  afterAll(() => { })
+  beforeAll(() => { })
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);

@@ -72,6 +72,16 @@ class Validators{
 	}
 }
 
+Jasmine
+>npm i jasmine
+
+describe('testing some service',()=>{
+	
+	it('checks getTodo',()=>{
+		//
+	})
+})
+
 
 
 

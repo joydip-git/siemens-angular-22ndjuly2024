@@ -1,0 +1,9 @@
+Angular unit testing:
+jasmine unit testing blog:
+https://www.testim.io/blog/jasmine-js-a-from-scratch-tutorial-to-start-testing/
+
+angular unit testing blog:
+https://www.angularminds.com/blog/writing-your-first-angular-unit-test-step-by-step-tutorial
+
+angular unt testing vidoe:
+https://www.youtube.com/playlist?list=PLoC8Q0moRTSiTBAKWBGiJjFUMpiFdaGdF
